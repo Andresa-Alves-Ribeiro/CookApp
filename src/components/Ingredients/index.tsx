@@ -1,9 +1,9 @@
 import { ScrollView } from "react-native"
 
-//import { services } from "@/services"
 
 import { styles } from "./styles"
 import { Ingredient, IngredientsProps } from "@/components/Ingredient"
+import { services } from "@/services"
 
 type Props = {
   ingredients: IngredientsProps[]
@@ -21,8 +21,7 @@ export function Ingredients({ ingredients }: Props) {
         <Ingredient
           key={ingredient.name}
           name={ingredient.name}
-          image=""
-          //image={`${services.storage.imagePath}/${ingredient.image}`}
+          image={`${services.storage.imagePath}/${ingredient.image}`}
         />
       ))}
     </ScrollView>
